@@ -1,0 +1,6 @@
+https://leetcode.com/problems/students-with-invalid-departments/
+
+SELECT Students.id , Students.name
+FROM Students  JOIN Departments 
+ON Students.department_id = Departments.id
+WHERE Departments.id IS NULL

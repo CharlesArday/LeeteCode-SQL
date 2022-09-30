@@ -1,0 +1,4 @@
+https://leetcode.com/problems/triangle-judgement/
+
+SELECT x,y,z ,IF(x+y>z AND z+y>x AND z+x>y,"Yes","No") AS triangle
+FROM Triangle 

@@ -1,0 +1,7 @@
+https://leetcode.com/problems/classes-more-than-5-students/
+
+
+SELECT Class
+FROM Courses 
+GROUP BY Class 
+HAVING COUNT(DISTINCT Student) >=5

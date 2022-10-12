@@ -1,0 +1,11 @@
+https://leetcode.com/problems/number-of-trusted-contacts-of-a-customer/
+
+
+
+SELECT invoice_id , customer_name , price,
+COUNT(contact_email) AS contacts_cnt,
+SUM(IF(contact_email IN (SELECT DISTINCT email FROM Customers), 1, 0)) AS trusted_contacts_cnt
+FROM Customers LEFT JOIN Contacts ON Customers.customer_id = Contacts.user_id
+JOIN Invoices ON Customers.customer_id = Invoices.user_id 
+GROUP BY invoice_id
+ORDER BY invoice_id

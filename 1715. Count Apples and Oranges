@@ -1,0 +1,7 @@
+https://leetcode.com/problems/count-apples-and-oranges/
+
+
+
+SELECT SUM(Boxes.apple_count + COALESCE(Chests.apple_count ,0))  AS apple_count,
+SUM(Boxes.orange_count + COALESCE(Chests.orange_count ,0))  AS orange_count
+FROM Boxes LEFT JOIN Chests ON Boxes.chest_id = Chests.chest_id 
